@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+* {
+  @apply transition-colors duration-200;
+}
+
+body {
+  @apply bg-slate-950 text-white;
+}
+
+body.light-mode {
+  @apply bg-slate-50 text-slate-900;
+}
+
+/* Glassmorphism styles */
+.glass {
+  @apply backdrop-blur-md border border-white/10;
+}
+
+.glass-dark {
+  @apply bg-slate-900/50 border-white/10;
+}
+
+.glass-light {
+  @apply bg-white/10 border-white/20;
+}
+
+/* Glow effects */
+.glow-primary {
+  @apply shadow-lg shadow-sky-500/20;
+}
+
+.glow-accent {
+  @apply shadow-lg shadow-purple-500/20;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  @apply w-2;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-slate-900;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-cyan-500 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-sky-500;
+}
+
+/* add premium transitions and animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes smoothScale {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+}
+
+.page-enter {
+  animation: fadeInUp 0.5s ease-out;
+}
+
+.nav-item-enter {
+  animation: slideInLeft 0.3s ease-out;
+}
+
+/* Enhanced button states */
+button {
+  @apply transition-all duration-200;
+}
+
+/* Focus states for accessibility */
+button:focus-visible {
+  @apply outline-none ring-2 ring-offset-2;
+  ring-color: rgba(14, 165, 233, 0.5);
+}
+
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  @apply outline-none ring-2 ring-offset-2;
+  ring-color: rgba(14, 165, 233, 0.5);
+}
